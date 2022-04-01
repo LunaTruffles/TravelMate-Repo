@@ -1,4 +1,4 @@
-//News and Weather API call
+//Event handler
 document.getElementById("weather").addEventListener('click', gettravelMate)
 
 let title1 = document.getElementsByClassName("card-title")
@@ -9,7 +9,6 @@ let title2 = document.getElementsByClassName("card-title1")
 let body2 = document.getElementsByClassName("card-text1")
 let url2 = document.getElementsByClassName("btn btn-lg btn-block btn-primary mt-auto")
 let city = document.getElementById('city').value
-
 
 async function gettravelMate(e) {
     e.preventDefault()

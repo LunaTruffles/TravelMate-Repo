@@ -67,3 +67,14 @@ async function gettravelMate(e) {
 
     })
 }
+
+//---------------------------------------------------------------
+//leaflet map js
+const map = L.map('map').setView([33.74,-84.38], 6);
+const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+const accessToken = 'pk.eyJ1Ijoic2FtbW9vbjkwIiwiYSI6ImNsMHkxbGZlYjExYTAzZXA1eHI1a3J6aGkifQ.KWKiZeMBZfOlRADNKOku1w'
+const tileUrl= 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+const tiles = L.tileLayer(tileUrl, {attribution});
+tiles.addTo(map)
+const marker = L.marker([33.74,-84.38],).addTo(map);
+//https://keen-lollipop-dd187d.netlify.app/

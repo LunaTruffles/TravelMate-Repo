@@ -1,4 +1,4 @@
-//News and Weather API call
+//Event handler
 document.getElementById("weather").addEventListener('click', gettravelMate)
 
 let title1 = document.getElementsByClassName("card-title")
@@ -9,7 +9,6 @@ let title2 = document.getElementsByClassName("card-title1")
 let body2 = document.getElementsByClassName("card-text1")
 let url2 = document.getElementsByClassName("btn btn-lg btn-block btn-primary mt-auto")
 let city = document.getElementById('city').value
-
 
 async function gettravelMate(e) {
     e.preventDefault()
@@ -68,3 +67,14 @@ async function gettravelMate(e) {
 
     })
 }
+
+//---------------------------------------------------------------
+//leaflet map js
+const map = L.map('map').setView([33.74,-84.38], 6);
+const attribution = '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+const accessToken = 'pk.eyJ1Ijoic2FtbW9vbjkwIiwiYSI6ImNsMHkxbGZlYjExYTAzZXA1eHI1a3J6aGkifQ.KWKiZeMBZfOlRADNKOku1w'
+const tileUrl= 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
+const tiles = L.tileLayer(tileUrl, {attribution});
+tiles.addTo(map)
+const marker = L.marker([33.74,-84.38],).addTo(map);
+//https://keen-lollipop-dd187d.netlify.app/

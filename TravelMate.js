@@ -7,12 +7,13 @@ let url1 = document.getElementsByClassName("btn btn-sm btn-block btn-primary mt-
 let newsImg = document.getElementsByClassName("card-img-top")
 let title2 = document.getElementsByClassName("card-title1")
 let body2 = document.getElementsByClassName("card-text1")
-let url2 = document.getElementsByClassName("btn btn-sm btn-block btn-primary mt-auto")
+let url2 = document.getElementsByClassName("btn btn-sm btn-block btn-primary mt-auto1")
 let city = document.getElementById('city').value
 
 async function gettravelMate(e) {
     e.preventDefault()
     document.getElementById('loader').innerHTML = `<div class="d-flex justify-content-center"><div class="lds-circle"><div></div></div></div>`
+    let city = document.getElementById('city').value
     //fetch using NewSearch to get 3 articles
     await fetch(`https://contextualwebsearch-websearch-v1.p.rapidapi.com/api/search/NewsSearchAPI?q=${city}&pageNumber=1&pageSize=3&autoCorrect=true&rapidapi-key=551df10a11msh3d849010fa27694p17866ejsn58cde5018ef3`)
     .then((response) =>{
@@ -56,6 +57,7 @@ async function gettravelMate(e) {
         image: something.current.condition.icon,
         uv: something.current.uv,
         }
+        document.getElementById('loader').innerHTML = ``
         document.getElementById("outputCity").innerHTML = cityInfo.city
         document.getElementById("outputTemp").innerHTML = cityInfo.temperatureF
         document.getElementById("outputCon").innerHTML = cityInfo.condition
